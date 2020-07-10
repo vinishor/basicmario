@@ -16,13 +16,21 @@ It's a reponsive theme and it works almost all of web-capable devices (e-books r
 
 ## Screenshots
 
-![Normal version](screenshot1.png)|Normal version|
-![Mobile version](screenshot2.png)|Mobile version|
-![Night-mode version](screenshot3.png)|Night-mode version|
+### Version normale / Normal version
+
+![Normal version](screenshot1.png)
+
+### Version mobile / Mobile version
+
+![Mobile version](screenshot2.png)
+
+### Version en mode nuit / Night-mode version
+
+![Night-mode version](screenshot3.png)
 
 ## Licence / License
 
-Licence du projet / Project's license : [BSD 2-Clause](license.md)
+Licence du projet / Project's license : [BSD 2-Clause](LICENSE.md)
 
 ### Notes addtionnelles / Extra notes
 
