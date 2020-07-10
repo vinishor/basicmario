@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
+<head>
+        {% block head %}
+        <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+        <meta charset=UTF-8>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Pelican">
+        <meta name="author" content="{{ AUTHOR }}"/>
+        <link rel="icon" type="image/x-icon" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/favicon.ico"/>
+        <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/hashover/themes/default/comments.css">
+        {% if FEED_ATOM %}
+        <link href="{{ FEED_DOMAIN }}/{%if FEED_ATOM_URL %}{{ FEED_ATOM_URL }}{% else %}{{ FEED_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+        {% endif %}
+        {% if FEED_RSS %}
+        <link href="{{ FEED_DOMAIN }}/{% if FEED_RSS_URL %}{{ FEED_RSS_URL }}{% else %}{{ FEED_RSS }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+        {% endif %}
+        {% if CATEGORY_FEED_ATOM and category %}
+        <link href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_ATOM_URL %}{{ CATEGORY_FEED_ATOM_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_ATOM.format(slug=category.slug) }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Categories Atom Feed" />
+        {% endif %}
+        {% if CATEGORY_FEED_RSS and category %}
+        <link href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_RSS_URL %}{{ CATEGORY_FEED_RSS_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_RSS.format(slug=category.slug) }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Categories RSS Feed" />
+        {% endif %}
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js.js"></script>
+        {% endblock head %}
+</head>
+<body>
+        <nav>
+            <span id="title"><a title="Accueil du blog" href="/">{{ SITENAME }}</a></span>
+            <a title="Lien vers la page À propos de" href="{{ SITEURL }}/pages/about.html">À propos du blog</a>
+            <a title="Lien vers la page À propos de moi" href="{{ SITEURL }}/pages/about-me.html">À propos de l'auteur</a>
+            <a title="Lien vers les archives du blog" href="{{ SITEURL }}/archives.html">Archives</a>
+            <a title="Lien vers la page Sites du moment" href="{{ SITEURL }}/pages/sdm.html" rel="noopener noreferrer">Sites du moment</a>
+            <a title="Lien vers ma page de contact" href="{{ SITEURL }}/pages/contact.html">Contact</a>
+            <a class="rss" title="Flux RSS du blog" href="{{ SITEURL }}/{{ FEED_ALL_RSS }}">Flux RSS</a>
+            <a class="rss" title="Flux Atom du blog" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}">Flux Atom</a>
+        </nav>
+        <header class="center">
+            <a id="switch" href="#" onclick="toggleNightMode();" id="nightmode">Mode clair</a>
+            <div class="fond">
+                {% block header %}
+                {% endblock %}
+            </div>
+        </header>
+        {% block content %}
+        {% endblock %}
+        <footer class="center">
+            <p>{{ AUTHOR }} / <a title="Générateur de blogs statiques en Python" target="_blank" rel="noopener noreferrer" href="https://getpelican.com/">Pelican</a> & <a title="Site officiel d'OpenBSD" rel="noopener noreferrer" target="_blank" href="https://www.openbsd.org/">OpenBSD</a> / <a title="Licence de publication du blog" rel="noopener noreferrer" target="_blank" href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a> / <a title="Lien vers ma page Liberapay" rel="noopener noreferrer" target="_blank" href="https://liberapay.com/linuxmario/donate">Me soutenir</a> / <a title="Lien vers le wiki de @prx" rel="noopener noreferrer" target="_blank" href="https://ybad.name/ah/">Envie d'apprendre à vous héberger ?</a></p>
+        </footer>
+</body>
+</html>

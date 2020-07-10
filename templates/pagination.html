@@ -1,0 +1,13 @@
+{% if DEFAULT_PAGINATION %}
+{% set first_page = articles_paginator.page(1) %}
+{% set last_page = articles_paginator.page(articles_paginator.num_pages) %}
+<p class="pagination">
+        {% if articles_page.has_previous() %}
+            <a href="{{ SITEURL }}/{{ articles_previous_page.url }}" class="precedent">&laquo; Billets plus récents</a>
+        {% endif %}
+        Page {{ articles_page.number }} / {{ articles_paginator.num_pages }}
+        {% if articles_page.has_next() %}
+            <a href="{{ SITEURL }}/{{ articles_next_page.url }}" class="suivant">Billets plus anciens &raquo;</a>
+        {% endif %}
+</p>
+{% endif %}

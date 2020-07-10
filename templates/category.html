@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Catégorie "{{ category }}" - {{ SITENAME }}{% endblock %}
+
+{% block head %}
+{{ super() }}
+<style>
+    header {background-image: url("{{ SITEURL }}/{{ THEME_STATIC_DIR }}/fonds/wall3.jpg");}
+</style>
+{% endblock %}
+
+{% block header %}
+{{ super() }}
+<h1>Articles rangés dans la catégorie &laquo; {{ category }} &raquo;</h1>
+<p><strong><a class="rss" title="Lien vers le flux RSS pour la catégorie {{ category }}" href="{{ SITEURL }}/{{ CATEGORY_FEED_RSS.format(slug=category.slug) }}">Flux RSS de la catégorie</a> / <a class="rss" title="Lien vers le flux Atom pour la catégorie {{ category }}" href="{{ SITEURL }}/{{ CATEGORY_FEED_ATOM.format(slug=category.slug) }}">Flux Atom de la catégorie</a></strong></p>
+{% endblock %}
+
+{% block content %}
+<div class="post">
+    <ul>
+    {% for article in articles_page.object_list %}
+        <li>
+            <h3>
+            <a title="Lien vers {{ article.title }}" class="post-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+            </h3>
+            <span class="post-meta">Publié le {{ article.date|strftime('%d/%m/%Y') }} par {{ article.author }}</span>
+            <p class="post-description">{{ article.summary }}</p>
+        </li>
+    {% endfor %}
+    </ul>
+    {% if articles_page.has_other_pages() %}
+        {% include 'pagination.html' %}
+    {% endif %}
+</div>
+{% endblock %}
