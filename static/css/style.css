@@ -25,6 +25,10 @@ a {
 a:hover, .rss:hover, body.night a:hover {
 	color: #bf616a;
 }
+a:focus, .rss:focus, body.night a:focus {
+	outline: 3px solid darkgrey;
+	outline-offset: 4px;
+}
 /* Réglages pour l'apparence des listes */
 ul {
 	list-style: square;

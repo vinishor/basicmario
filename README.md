@@ -34,4 +34,4 @@ Licence du projet / Project's license : [BSD 2-Clause](LICENSE.md)
 
 ### Notes addtionnelles / Extra notes
 
-Script JavaScript : basé sur le travail de prx@ybad.name (CC BY 4.0) / JavaScript script : based on the work of prx@ybad.name
+Script JavaScript : basé sur le travail de prx@ybad.name (CC BY 4.0) / JavaScript script : based on the work of prx@ybad.name (CC BY 4.0)
