@@ -22,22 +22,18 @@
         {% if CATEGORY_FEED_RSS and category %}
         <link href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_RSS_URL %}{{ CATEGORY_FEED_RSS_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_RSS.format(slug=category.slug) }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Categories RSS Feed" />
         {% endif %}
-        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js.js"></script>
         {% endblock head %}
 </head>
 <body>
         <nav>
             <span id="title"><a title="Accueil du blog" href="/">{{ SITENAME }}</a></span>
             <a title="Lien vers la page À propos de" href="{{ SITEURL }}/pages/about.html">À propos du blog</a>
-            <a title="Lien vers la page À propos de moi" href="{{ SITEURL }}/pages/about-me.html">À propos de l'auteur</a>
             <a title="Lien vers les archives du blog" href="{{ SITEURL }}/archives.html">Archives</a>
-            <a title="Lien vers la page Sites du moment" href="{{ SITEURL }}/pages/sdm.html">Sites du moment</a>
             <a title="Lien vers ma page de contact" href="{{ SITEURL }}/pages/contact.html">Contact</a>
             <a class="rss" title="Flux RSS du blog" href="{{ SITEURL }}/{{ FEED_ALL_RSS }}">Flux RSS</a>
             <a class="rss" title="Flux Atom du blog" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}">Flux Atom</a>
         </nav>
         <header class="center">
-            <a id="switch" href="#" onclick="toggleNightMode();" id="nightmode">Mode clair</a>
             <div class="fond">
                 {% block header %}
                 {% endblock %}
@@ -46,7 +42,7 @@
         {% block content %}
         {% endblock %}
         <footer class="center">
-            <p>{{ AUTHOR }} / <a title="Générateur de blogs statiques en Python" target="_blank" rel="noreferrer" href="https://getpelican.com/">Pelican</a> & <a title="Site officiel de Debian" rel="noreferrer" target="_blank" href="https://www.debian.org/">Debian</a> / <a title="Licence de publication du blog" rel="license noreferrer" target="_blank" href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a> / <a title="Lien vers ma page Liberapay" rel="noreferrer" target="_blank" href="https://liberapay.com/linuxmario/donate">Me soutenir</a> / <a title="Lien vers le wiki de @prx" rel="noreferrer" target="_blank" href="https://ybad.name/ah/">Envie d'apprendre à vous héberger ?</a></p>
+            <p>Généré avec <a title="Générateur de blogs statiques en Python" rel="noreferrer" href="https://getpelican.com/">Pelican</a> / Licence <a title="Licence de publication du blog" rel="license noreferrer"  href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a> / <a title="Lien vers ma page Liberapay" rel="noreferrer"  href="https://liberapay.com/linuxmario/donate">Me soutenir</a></p>
         </footer>
 </body>
 </html>

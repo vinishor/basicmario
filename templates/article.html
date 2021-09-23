@@ -8,15 +8,12 @@
 {% if translations.entry_hreflang(article) %}
     {{ translations.entry_hreflang(article) }}
 {% endif %}
-<style>
-    header {background-image: url("{{ SITEURL }}/{{ THEME_STATIC_DIR }}/fonds/wall2.jpg");}
-</style>
 {% endblock %}
 
 {% block header %}
 <h1>{{ article.title }}</h1>
-<p><span>Publié le {{ article.date|strftime('%d/%m/%Y') }}</span>{% if article.author %} • <span>Écrit par {{ article.author }}</span>{% endif %}</p>
-<p><strong>Catégorie : {% if article.category %}<span><a title="Lien vers les publications marquée par la catégorie {{ article.category }}" href="{{ SITEURL }}/{{ article.category.url }}">#{{ article.category }} </a></span>{% endif %}</strong></p>
+<p>Publié le {{ article.date|strftime('%d/%m/%Y') }}{% if article.author %} et écrit par {{ article.author }}{% endif %}</p>
+<p>Catégorie : {% if article.category %}<a title="Lien vers les publications marquée par la catégorie {{ article.category }}" href="{{ SITEURL }}/{{ article.category.url }}">#{{ article.category }} </a>{% endif %}</p>
 {% import 'translations.html' as translations with context %}
 {{ translations.translations_for(article) }}
 {% endblock %}

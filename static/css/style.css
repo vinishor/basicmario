@@ -3,39 +3,25 @@
 body {
 	margin: 0;
 	padding: 0;
-	background-color: #e5e9f0;
-	color: #3b4252;
-	text-align: justify;
-	font-size: medium;
-	font-family: sans-serif;
-	/* Propriétés pour les grilles */
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: auto;
-	grid-template-areas:	"nav"
-				"header"
-				"main"
-				"footer";
+	background-color: rgb(248, 246, 241);
+	color: rgb(126, 81, 33);
+	text-align: left;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 /* Réglages des liens dans les pages */
-a {
-	text-decoration: none;
-	color: #5e81ac;
+a:link, a:visited {
+	text-decoration-style: dotted;
+	color: rgb(170, 92, 8);
 }
-a:hover, .rss:hover, body.night a:hover {
-	color: #bf616a;
+a:hover {
+	color: rgb(42, 18, 10);
 }
-a:focus, .rss:focus, body.night a:focus {
-	outline: 3px solid darkgrey;
+a:focus {
+	outline: 3px solid rgb(170, 92, 8);
 	outline-offset: 4px;
-}
-/* Réglages pour l'apparence des listes */
-ul {
-	list-style: square;
 }
 /* Réglages pour la mise en forme du corps de l'article */
 .post {
-	grid-area: main;
 	margin: 3% 20%;
 }
 /* Réglages pour la mise en forme du système de pagination */
@@ -48,12 +34,10 @@ ul {
 .precedent, .suivant {
 	margin: 10px;
 	padding: 5px;
-	background-color: #d8dee9;
-	border: 2px solid #5e81ac;
+	border: 2px solid rgb(170, 92, 8);
 }
-/* Option pour changer la couleur de la bordure du bouton lors du survol */
-.precedent:hover, .suivant:hover, body.night .precedent:hover, body.night .suivant:hover {
-	border: 2px solid #bf616a;
+.precedent:hover, .suivant:hover {
+	border: 2px solid rgb(42, 18, 10);
 }
 /* Classe dédiée pour le centrage de texte */
 .center {
@@ -65,10 +49,10 @@ blockquote {
 	font-style: italic;
 	padding: 1%;
 }
-/* Réglages pour les blocs "Poésie des mots" */
-kanji {
-	text-align: center;
-	font-size: 40px;
+.highlight {
+	background: #373737;
+	padding: 10px;
+	color: whitesmoke;
 }
 /* Réglages pour les images */
 img {
@@ -80,27 +64,20 @@ table {
 }
 /* Réglages pour le menu de navigation */
 nav {
-	grid-area: nav;
 	padding: 20px 0;
-	border-bottom: 3px solid #5e81ac;
-	background-color: #d8dee9;
+	border-bottom: 3px solid rgb(170, 92, 8);
 	text-align: right;
-	font-size: medium;
 }
 nav a {
 	padding: 15px;
-}
-.rss, body.night .rss {
-	color: #d08770;
 }
 #title {
 	float: left;
 }
 /* Réglages pour l'en-tête du site */
 header {
-	grid-area: header;
 	padding: 50px 0;
-	color: #0d0d0d;
+	background-image: url("/theme/fonds/wall-light.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100%;
@@ -109,22 +86,13 @@ header {
 	width: 50%;
 	margin: auto;
 	padding: 5px 15px;
-	background-color: #eceff4b3;
-}
-#switch {
-	background-color: #2e3440;
-	color: #d8dee9;
-	float: right;
-	padding: 5px;
-	border: 3px solid #d8dee9;
+	background-color: rgba(248, 246, 241, 0.9);
 }
 /* Réglages pour le pied de page */
 footer {
-	grid-area: footer;
-	font-size: 0.75em;
-	border-top: 3px solid #5e81ac;
-	background-color: #d8dee9;
+	border-top: 3px solid rgb(170, 92, 8);
 }
+
 /* Réglages permettant d'améliorer l'expérience sur téléphones et tablettes */
 @media (max-width: 1050px) {
 	nav {
@@ -137,20 +105,14 @@ footer {
 	#title {
 		float: none;
 	}
-	#title a {
-		background-color: #2e3440;
-	}
 	.precedent, .suivant {
 		display: block;
 		margin: 2%;
 		padding: 2%;
 	}
 }
-/* Réglages concernant la taille du fond d'écran de la bannière pour les smartphones */
+/* Réglages concernant la taille du fond d'écran de la bannière pour les smartphones et l'agencement des articles et des boutons */
 @media (max-width: 500px) {
-	h1 {
-		font-size: 1.55em;
-	}
 	header {
 		background-size: 300%;
 	}
@@ -172,32 +134,35 @@ footer {
 		font-size: larger;
 	}
 }
-/* Night mode */
-body.night {
-	background-color: #3b4252;
-	color: #d8dee9;
-}
-nav.night, footer.night {
-	background-color: #434c5e;
-	border-color: #88c0d0;
-	color: #d8dee9;
-}
-body.night header {
-	color: #d8dee9;
-}
-body.night .fond {
-	background-color: #4c566ab3;
-}
-body.night #switch {
-	color: #2e3440;
-	background-color: #d8dee9;
-	border-color: #2e3440;
-}
-body.night .precedent, body.night .suivant {
-	background-color: #4c566a;
-	border-color: #88c0d0;
-}
-body.night a {
-	color: #88c0d0;
-}
 
+/* Mode sombre activable via les préférences du navigateur */
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #462e0e;
+      		color: rgb(248, 246, 241);
+	}
+	a:link, a:visited {
+		color: rgb(255, 224, 161);
+	}
+	a:hover {
+    		color: rgb(248, 246, 241);
+	}
+	a:focus {
+		outline: 3px solid rgb(248, 246, 241);
+	}
+	header {
+		background-image: url("/theme/fonds/wall-dark.jpg");
+	}
+	nav, footer {
+		border-color: rgb(255, 224, 161);
+	}
+	.fond {
+		background-color: #462e0eb3;
+	}
+	.precedent, .suivant {
+		border-color: rgb(255, 224, 161);
+	}
+	.precedent:hover, .suivant:hover {
+		border: 2px solid rgb(248, 246, 241);
+	}
+}

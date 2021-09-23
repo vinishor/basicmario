@@ -2,13 +2,6 @@
 
 {% block title %}Accueil - {{ SITENAME }}{% endblock %}
 
-{% block head %}
-{{ super() }}
-<style>
-    header {background-image: url("{{ SITEURL }}/{{ THEME_STATIC_DIR }}/fonds/wall1.jpg");}
-</style>
-{% endblock %}
-
 {% block header %}
 {{ super() }}
 <h1>{{ SITENAME }}</h1>
@@ -18,18 +11,12 @@
 {% block content %}
 <div class="post">
     <h2 class="page-heading">Liste des publications</h2>
-    <ul>
     {% for article in articles_page.object_list %}
-        <li>
-            <h3>
-            <a title="Lien vers {{ article.title }}" class="post-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
-            </h3>
-            <span class="post-meta">Publié le {{ article.date|strftime('%d/%m/%Y') }} par {{ article.author }}</span>
-            <p><strong>Catégorie : {% if article.category %}<span><a title="Lien vers les publications marquée par la catégorie {{ article.category }}" href="{{ SITEURL }}/{{ article.category.url }}">#{{ article.category }} </a></span>{% endif %}</strong></p>
-            <p class="post-description">{{ article.summary }}</p>
-        </li>
+        <h3><a title="Lien vers {{ article.title }}" class="post-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
+        <p>Publié le {{ article.date|strftime('%d/%m/%Y') }} par {{ article.author }}</p>
+        <p>Catégorie : {% if article.category %}<a title="Lien vers les publications marquée par la catégorie {{ article.category }}" href="{{ SITEURL }}/{{ article.category.url }}">#{{ article.category }} </a>{% endif %}</p>
+        <p>{{ article.summary }}</p>
     {% endfor %}
-    </ul>
     {% if articles_page.has_other_pages() %}
         {% include 'pagination.html' %}
     {% endif %}
