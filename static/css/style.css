@@ -1,4 +1,19 @@
 @charset "UTF-8";
+/* Luciole */
+@font-face {
+  font-family: 'luciole';
+  src: url('/theme/fonts/luciole.woff') format('woff'),
+       url('/theme/fonts/luciole.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'luciole-bold';
+  src: url('/theme/fonts/luciole-bold.woff') format('woff');
+       url('/theme/fonts/luciole-bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: bold;
+}
 /* Réglages du corps de page */
 body {
 	margin: 0;
@@ -6,7 +21,10 @@ body {
 	background-color: rgb(248, 246, 241);
 	color: rgb(126, 81, 33);
 	text-align: left;
-	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-family: "luciole", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+h1,h2,h3,h4 {
+  font-family: "luciole-bold";
 }
 /* Réglages des liens dans les pages */
 a:link, a:visited {
