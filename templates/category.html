@@ -2,6 +2,13 @@
 
 {% block title %}Catégorie "{{ category }}" - {{ SITENAME }}{% endblock %}
 
+{% block head %}
+{{ super() }}
+<meta property="og:title" content="{{ category }}">
+<meta property="og:description" content="Articles rangés dans la catégorie &laquo; {{ category }} &raquo;">
+<meta property="og:url" content="{{ SITEURL }}/{{ category.url }}">
+{% endblock %}
+
 {% block header %}
 {{ super() }}
 <h1>Articles rangés dans la catégorie &laquo; {{ category }} &raquo;</h1>

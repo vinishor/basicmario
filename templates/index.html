@@ -2,6 +2,13 @@
 
 {% block title %}Accueil - {{ SITENAME }}{% endblock %}
 
+{% block head %}
+{{ super() }}
+<meta property="og:title" content="{{ SITENAME }}">
+<meta property="og:description" content="{{ MOTTO }}">
+<meta property="og:url" content="{{ SITEURL }}">
+{% endblock %}
+
 {% block header %}
 {{ super() }}
 <h1>{{ SITENAME }}</h1>
