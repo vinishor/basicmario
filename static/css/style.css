@@ -61,7 +61,7 @@ a:focus {
 .center {
 	text-align: center;
 }
-/* Réglages pour les blocs de citation */
+/* Réglages pour les blocs de citation et les blocs de code */
 blockquote {
 	text-align: center;
 	font-style: italic;
@@ -71,6 +71,9 @@ blockquote {
 	background: #373737;
 	padding: 5px 15px;
 	color: whitesmoke;
+}
+pre {
+	white-space: pre-wrap;
 }
 /* Réglages pour les images */
 img {
