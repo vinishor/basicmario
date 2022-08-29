@@ -21,6 +21,7 @@
         <h2><a title="Lien vers {{ article.title }}" class="post-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
         <p>Publié le {{ article.date|strftime('%d/%m/%Y') }} par {{ article.author }}</p>
         <p>{{ article.summary }}</p>
+        <hr/>
     {% endfor %}
     {% if articles_page.has_other_pages() %}
         {% include 'pagination.html' %}

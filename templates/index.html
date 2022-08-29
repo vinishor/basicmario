@@ -23,6 +23,7 @@
         <p>Publié le {{ article.date|strftime('%d/%m/%Y') }} par {{ article.author }}</p>
         <p>Catégorie : {% if article.category %}<a title="Lien vers les publications marquée par la catégorie {{ article.category }}" href="{{ SITEURL }}/{{ article.category.url }}">#{{ article.category }} </a>{% endif %}</p>
         <p>{{ article.summary }}</p>
+        <hr/>
     {% endfor %}
     {% if articles_page.has_other_pages() %}
         {% include 'pagination.html' %}
