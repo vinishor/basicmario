@@ -14,28 +14,38 @@
   font-weight: bold;
   font-style: bold;
 }
+
+/* Couleurs du theme */
+:root {
+  --main-bg: rgb(248, 246, 241);
+  --text: rgb(126, 81, 33);
+  --link: rgb(170, 92, 8);
+  --link-hover: rgb(42, 18, 10);
+  --h1-bg: rgba(248, 246, 241, 0.9);
+  --bg-image: url("/theme/fonds/wall-light.jpg");
+}
 /* Réglages du corps de page */
 body {
 	margin: 0;
 	padding: 0;
-	background-color: rgb(248, 246, 241);
-	color: rgb(126, 81, 33);
+	background-color: var(--main-bg);
+	color: var(--text);
 	text-align: left;
 	font-family: "luciole", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 h1, h2, h3, h4, strong {
-  font-family: "luciole-bold";
+  font-family: "luciole-bold", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 /* Réglages des liens dans les pages */
 a:link, a:visited {
 	text-decoration-style: dotted;
-	color: rgb(170, 92, 8);
+	color: var(--link);
 }
 a:hover {
-	color: rgb(42, 18, 10);
+	color: var(--link-hover);
 }
 a:focus {
-	outline: 3px solid rgb(170, 92, 8);
+	outline: 3px solid var(--link);
 	outline-offset: 4px;
 }
 /* Réglages pour la mise en forme du corps de l'article */
@@ -52,10 +62,10 @@ a:focus {
 .precedent, .suivant {
 	margin: 10px;
 	padding: 5px;
-	border: 2px solid rgb(170, 92, 8);
+	border: 2px solid var(--link);
 }
 .precedent:hover, .suivant:hover {
-	border: 2px solid rgb(42, 18, 10);
+	border: 2px solid var(--link-hover);
 }
 /* Classe dédiée pour le centrage de texte */
 .center {
@@ -86,7 +96,7 @@ table {
 /* Réglages pour le menu de navigation */
 nav {
 	padding: 20px 0;
-	border-bottom: 3px solid rgb(170, 92, 8);
+	border-bottom: 3px solid var(--link);
 	text-align: right;
 }
 nav a {
@@ -98,7 +108,7 @@ nav a {
 /* Réglages pour l'en-tête du site */
 header {
 	padding: 50px 0;
-	background-image: url("/theme/fonds/wall-light.jpg");
+	background-image: var(--bg-image);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100%;
@@ -107,11 +117,11 @@ header {
 	width: 50%;
 	margin: auto;
 	padding: 5px 15px;
-	background-color: rgba(248, 246, 241, 0.9);
+	background-color: var(--h1-bg);
 }
 /* Réglages pour le pied de page */
 footer {
-	border-top: 3px solid rgb(170, 92, 8);
+	border-top: 3px solid var(--link);
 }
 
 /* Réglages permettant d'améliorer l'expérience sur téléphones et tablettes */
@@ -151,39 +161,20 @@ footer {
 }
 /* Réglages permettant d'améliorer l'expérience sur les grands écrans */
 @media (min-width: 1200px) {
-	body {
-		font-size: larger;
-	}
+  body {
+    font-size: larger;
+  }
 }
 
 /* Mode sombre activable via les préférences du navigateur */
 @media (prefers-color-scheme: dark) {
-	body {
-		background-color: #462e0e;
-      		color: rgb(248, 246, 241);
-	}
-	a:link, a:visited {
-		color: rgb(255, 224, 161);
-	}
-	a:hover {
-    		color: rgb(248, 246, 241);
-	}
-	a:focus {
-		outline: 3px solid rgb(248, 246, 241);
-	}
-	header {
-		background-image: url("/theme/fonds/wall-dark.jpg");
-	}
-	nav, footer {
-		border-color: rgb(255, 224, 161);
-	}
-	.fond {
-		background-color: #462e0eb3;
-	}
-	.precedent, .suivant {
-		border-color: rgb(255, 224, 161);
-	}
-	.precedent:hover, .suivant:hover {
-		border: 2px solid rgb(248, 246, 241);
-	}
+  /* Couleurs du theme */
+  :root {
+    --main-bg: #221607;
+    --text: rgb(248, 246, 241);
+    --link: rgb(255, 224, 161);
+    --link-hover: rgb(248, 246, 241);
+    --h1-bg: #462e0eb3;
+    --bg-image: url("/theme/fonds/wall-dark.jpg");
+    }
 }
