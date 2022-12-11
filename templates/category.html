@@ -4,6 +4,7 @@
 
 {% block head %}
 {{ super() }}
+<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/header.css">
 <meta property="og:title" content="{{ category }}">
 <meta property="og:description" content="Articles rangés dans la catégorie &laquo; {{ category }} &raquo;">
 <meta property="og:url" content="{{ SITEURL }}/{{ category.url }}">
@@ -12,14 +13,14 @@
 {% block header %}
 {{ super() }}
 <h1>Articles rangés dans la catégorie &laquo; {{ category }} &raquo;</h1>
-<p><a class="rss" title="Lien vers le flux RSS pour la catégorie {{ category }}" href="{{ SITEURL }}/{{ CATEGORY_FEED_RSS.format(slug=category.slug) }}">Flux RSS de la catégorie</a> / <a class="rss" title="Lien vers le flux Atom pour la catégorie {{ category }}" href="{{ SITEURL }}/{{ CATEGORY_FEED_ATOM.format(slug=category.slug) }}">Flux Atom de la catégorie</a></p>
+<p class="infos"><a class="rss" title="Lien vers le flux RSS pour la catégorie {{ category }}" href="{{ SITEURL }}/{{ CATEGORY_FEED_RSS.format(slug=category.slug) }}">Flux RSS de la catégorie</a> / <a class="rss" title="Lien vers le flux Atom pour la catégorie {{ category }}" href="{{ SITEURL }}/{{ CATEGORY_FEED_ATOM.format(slug=category.slug) }}">Flux Atom de la catégorie</a></p>
 {% endblock %}
 
 {% block content %}
 <div class="post">
     {% for article in articles_page.object_list %}
         <h2><a title="Lien vers {{ article.title }}" class="post-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
-        <p>Publié le {{ article.date|strftime('%d/%m/%Y') }} par {{ article.author }}</p>
+        <p class="infos">Publié le {{ article.date|strftime('%d/%m/%Y') }} par {{ article.author }}</p>
         <p>{{ article.summary }}</p>
         <hr/>
     {% endfor %}
