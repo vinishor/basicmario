@@ -9,7 +9,7 @@
 }
 @font-face {
   font-family: 'luciole-bold';
-  src: url('/theme/fonts/luciole-bold.woff') format('woff');
+  src: url('/theme/fonts/luciole-bold.woff') format('woff'),
        url('/theme/fonts/luciole-bold.ttf') format('truetype');
   font-weight: bold;
   font-style: bold;
@@ -17,12 +17,13 @@
 
 /* Couleurs du theme */
 :root {
-  --main-bg: rgb(248, 246, 241);
-  --text: rgb(126, 81, 33);
-  --link: rgb(170, 92, 8);
-  --link-hover: rgb(42, 18, 10);
-  --h1-bg: rgba(248, 246, 241, 0.9);
-  --bg-image: url("/theme/fonds/wall-light.jpg");
+ 	--main-bg: white;
+	--text: black;
+	--link: #044f94;
+	--link-hover: black;
+	--a-hover: #a4d8ff;
+	--h1-bg: #ffffffcf;
+	--bg-image: url("/theme/fonds/wall-light.jpg");
 }
 /* Réglages du corps de page */
 body {
@@ -34,7 +35,7 @@ body {
 	font-family: "luciole", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 h1, h2, h3, h4, strong {
-  font-family: "luciole-bold", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+ 	font-family: "luciole-bold", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 /* Réglages des liens dans les pages */
 a:link, a:visited {
@@ -43,6 +44,10 @@ a:link, a:visited {
 }
 a:hover {
 	color: var(--link-hover);
+	background-color: var(--a-hover);
+}
+div a:hover, footer a:hover {
+	padding: 5px;
 }
 a:focus {
 	outline: 3px solid var(--link);
@@ -51,6 +56,9 @@ a:focus {
 /* Réglages pour la mise en forme du corps de l'article */
 .post {
 	margin: 3% 20%;
+}
+.infos {
+	font-size: small;
 }
 /* Réglages pour la mise en forme du système de pagination */
 /* Boîte principale */
@@ -81,6 +89,8 @@ blockquote {
 	background: #373737;
 	padding: 5px 15px;
 	color: whitesmoke;
+	border-radius: 10px;
+	white-space: pre-wrap;
 }
 pre {
 	white-space: pre-wrap;
@@ -104,20 +114,6 @@ nav a {
 }
 #title {
 	float: left;
-}
-/* Réglages pour l'en-tête du site */
-header {
-	padding: 50px 0;
-	background-image: var(--bg-image);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 100%;
-}
-.fond {
-	width: 50%;
-	margin: auto;
-	padding: 5px 15px;
-	background-color: var(--h1-bg);
 }
 /* Réglages pour le pied de page */
 footer {
@@ -164,17 +160,21 @@ footer {
   body {
     font-size: larger;
   }
+  .infos {
+	font-size: medium;
+  }
 }
 
 /* Mode sombre activable via les préférences du navigateur */
 @media (prefers-color-scheme: dark) {
   /* Couleurs du theme */
   :root {
-    --main-bg: #221607;
-    --text: rgb(248, 246, 241);
-    --link: rgb(255, 224, 161);
-    --link-hover: rgb(248, 246, 241);
-    --h1-bg: #462e0eb3;
+    --main-bg: #111417;
+    --text: #a4d8ff;
+    --link: #149aff;
+    --link-hover: #fff;
+    --a-hover: #004a82;
+    --h1-bg: #111417cf;
     --bg-image: url("/theme/fonds/wall-dark.jpg");
     }
 }
