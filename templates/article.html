@@ -9,7 +9,7 @@
     {{ translations.entry_hreflang(article) }}
 {% endif %}
 <meta property="og:title" content="{{ article.title }}">
-<meta property="og:description" content="{{ article.summary }}">
+<meta property="og:description" content="{{ article.summary|striptags }}">
 <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}">
 {% endblock %}
 
